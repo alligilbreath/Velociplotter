@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		8ECAD5D635DA434A99F6AC8E /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3CB91C22A0A94A9DB675E336 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				7810B67D91D04D729B614698 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		A0533A92BBC347C39BE859D8 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FD330B500E7B499F90849774 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				D04D1D1233C74F34A2EA62A7 /* CMake Rules */,
+			);
+			dependencies = (
+				410BFCF0B5F0448CA4802DA8 /* PBXTargetDependency */,
+				4949984015014F2ABE9C9F10 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0A4487CB61C14A1F90DB4E16 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C3F38BEFA4BC4CCA97707EDB /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */; };
+		107ACAECEB4D408CB9BF5916 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.h */ = {isa = PBXBuildFile; fileRef = C30E8E7CBD3849FDB9D56E2E /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.h */; };
+		2DB80A214BFD4F9FAFA5BA84 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.cpp */ = {isa = PBXBuildFile; fileRef = 777149499537440A81D9D76C /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.cpp */; };
+		2F09A9E0443D46D68E901A35 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.cpp */ = {isa = PBXBuildFile; fileRef = 1CAF9A4EF8C246EEB3D31623 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.cpp */; };
+		5F8E5BF2DC2C485485989354 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/main.cpp */ = {isa = PBXBuildFile; fileRef = FEA31217C9FB4553AA8A83D1 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/main.cpp */; };
+		712B69CCC68A418E870E1342 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.cpp */ = {isa = PBXBuildFile; fileRef = 4CA90905A2E0480A88107975 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.cpp */; };
+		A7CB7A60DB3042D58C825A2B /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.h */ = {isa = PBXBuildFile; fileRef = B1FD1C16E7D34EC894CE5FC3 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.h */; };
+		C60FF49CE42D4B65A52A54AD /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.h */ = {isa = PBXBuildFile; fileRef = 00793CD7CDEE4D589BB597E5 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		3E3DB1B1A4AE4626810015F2 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		574DE5A5C52B43059EAF8312 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		5CEEC68645664D6586C022F6 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		BDCF58900AFA4743B32A141B /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		25D3F2B8AE424613AD137CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FB74831B1BB4DD8A44D29E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ECAD5D635DA434A99F6AC8E;
+			remoteInfo = ZERO_CHECK;
+		};
+		5E9338BC53D04D3EB9FD2F58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FB74831B1BB4DD8A44D29E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ECAD5D635DA434A99F6AC8E;
+			remoteInfo = ZERO_CHECK;
+		};
+		FCE968A1D4024C0E94A72393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FB74831B1BB4DD8A44D29E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B33CAA8DE5484B5FBA7D68E9;
+			remoteInfo = velociplotter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00793CD7CDEE4D589BB597E5 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = GPSPosition.h; path = GPSPosition.h; sourceTree = SOURCE_ROOT; };
+		1CAF9A4EF8C246EEB3D31623 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Velociplotter.cpp; path = Velociplotter.cpp; sourceTree = SOURCE_ROOT; };
+		28E47680F2D44536A31F8DFE /* velociplotter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = velociplotter; sourceTree = BUILT_PRODUCTS_DIR; };
+		4705555EC2594DA889194D3C /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		4CA90905A2E0480A88107975 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = testEndToEnd.cpp; path = testEndToEnd.cpp; sourceTree = SOURCE_ROOT; };
+		777149499537440A81D9D76C /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GPSPosition.cpp; path = GPSPosition.cpp; sourceTree = SOURCE_ROOT; };
+		9F9E09146788430E9D6469C8 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B1FD1C16E7D34EC894CE5FC3 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = testEndToEnd.h; path = testEndToEnd.h; sourceTree = SOURCE_ROOT; };
+		C30E8E7CBD3849FDB9D56E2E /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Velociplotter.h; path = Velociplotter.h; sourceTree = SOURCE_ROOT; };
+		C3F38BEFA4BC4CCA97707EDB /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		FEA31217C9FB4553AA8A83D1 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		14583E84EF95485AAF4B56A2 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				93F4048EF8E142D38950A9AA /* CMake Rules */,
+				9F9E09146788430E9D6469C8 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		299591499FBB448380174147 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		4937483606834B8591569710 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				777149499537440A81D9D76C /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.cpp */,
+				1CAF9A4EF8C246EEB3D31623 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.cpp */,
+				FEA31217C9FB4553AA8A83D1 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/main.cpp */,
+				4CA90905A2E0480A88107975 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		5FBDA07BB72540AB81F1314C /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				299591499FBB448380174147 /* CMake Rules */,
+				4705555EC2594DA889194D3C /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		6CE3038E9D5346A8A3E232C3 = {
+			isa = PBXGroup;
+			children = (
+				87B08ED9FA3143F8B6007D84 /* velociplotter */,
+				5FBDA07BB72540AB81F1314C /* ALL_BUILD */,
+				14583E84EF95485AAF4B56A2 /* ZERO_CHECK */,
+				EAB9B4AF17B6416983CAF79F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D9A116D5A0C405E83CBFAE7 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				00793CD7CDEE4D589BB597E5 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.h */,
+				C30E8E7CBD3849FDB9D56E2E /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.h */,
+				B1FD1C16E7D34EC894CE5FC3 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		87B08ED9FA3143F8B6007D84 /* velociplotter */ = {
+			isa = PBXGroup;
+			children = (
+				4937483606834B8591569710 /* Source Files */,
+				6D9A116D5A0C405E83CBFAE7 /* Header Files */,
+				C3F38BEFA4BC4CCA97707EDB /* /Users/alligilbreath/Desktop/project10/project_10_example/src/CMakeLists.txt */,
+			);
+			name = velociplotter;
+			sourceTree = "<group>";
+		};
+		93F4048EF8E142D38950A9AA /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		EAB9B4AF17B6416983CAF79F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28E47680F2D44536A31F8DFE /* velociplotter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B33CAA8DE5484B5FBA7D68E9 /* velociplotter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F589921438D346FFA0810716 /* Build configuration list for PBXNativeTarget "velociplotter" */;
+			buildPhases = (
+				DC1D88E13E1042B899490ACC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB445D182B02485884FA7C26 /* PBXTargetDependency */,
+			);
+			name = velociplotter;
+			productName = velociplotter;
+			productReference = 28E47680F2D44536A31F8DFE /* velociplotter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FB74831B1BB4DD8A44D29E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 1F2CA28B42D34F6CA37C3FEF /* Build configuration list for PBXProject "Project" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				574DE5A5C52B43059EAF8312 /* Debug */,
+				BDCF58900AFA4743B32A141B /* Release */,
+				5CEEC68645664D6586C022F6 /* MinSizeRel */,
+				3E3DB1B1A4AE4626810015F2 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 6CE3038E9D5346A8A3E232C3;
+			projectDirPath = /Users/alligilbreath/Desktop/project10/project_10_example/src;
+			projectRoot = "";
+			targets = (
+				A0533A92BBC347C39BE859D8 /* ALL_BUILD */,
+				8ECAD5D635DA434A99F6AC8E /* ZERO_CHECK */,
+				B33CAA8DE5484B5FBA7D68E9 /* velociplotter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A4E621500754E0BB177F333 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		52E6046928184672987C0051 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7810B67D91D04D729B614698 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alligilbreath/Desktop/project10/project_10_example/bld -f /Users/alligilbreath/Desktop/project10/project_10_example/bld/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		D04D1D1233C74F34A2EA62A7 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/alligilbreath/Desktop/project10/project_10_example/bld -f /Users/alligilbreath/Desktop/project10/project_10_example/bld/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC1D88E13E1042B899490ACC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DB80A214BFD4F9FAFA5BA84 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/GPSPosition.cpp */,
+				2F09A9E0443D46D68E901A35 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/Velociplotter.cpp */,
+				5F8E5BF2DC2C485485989354 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/main.cpp */,
+				712B69CCC68A418E870E1342 /* /Users/alligilbreath/Desktop/project10/project_10_example/src/testEndToEnd.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		410BFCF0B5F0448CA4802DA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B33CAA8DE5484B5FBA7D68E9 /* velociplotter */;
+			targetProxy = FCE968A1D4024C0E94A72393 /* PBXContainerItemProxy */;
+		};
+		4949984015014F2ABE9C9F10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ECAD5D635DA434A99F6AC8E /* ZERO_CHECK */;
+			targetProxy = 5E9338BC53D04D3EB9FD2F58 /* PBXContainerItemProxy */;
+		};
+		DB445D182B02485884FA7C26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ECAD5D635DA434A99F6AC8E /* ZERO_CHECK */;
+			targetProxy = 25D3F2B8AE424613AD137CF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F3F392F9A064DD7AAD90B1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11      -Wall -g";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = velociplotter;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		15D1C9CE966C4E0CBB69D260 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		167C7A53266B477C815CE3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld/build;
+			};
+			name = Release;
+		};
+		1886EE9506A34B35BFECA343 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld/build;
+			};
+			name = RelWithDebInfo;
+		};
+		2973F19852014B1893786810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		568137EE70F142219186CFAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		5BB4DE0075EC4F71B6424DE5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11        -DNDEBUG   -Wall -g";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = velociplotter;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5E6727AC065F4299801CE6DD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		80468277A78347B7A72EA21E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		8C9B498BCA5B4D9B92C088C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld/build;
+			};
+			name = Debug;
+		};
+		A2A8F6C40A034B398C988388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     -DNDEBUG   -Wall -g";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = velociplotter;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		BA1DF99F7DD240B68AD33F50 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld/build;
+			};
+			name = MinSizeRel;
+		};
+		BD0C0242A60A4774B55F11CE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C63F8593596142ECAE533DF0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++11     -DNDEBUG   -Wall -g";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = velociplotter;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C7E1146C58B54B3AA5E83390 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		F7A7C68C81974E68B2AC51CD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/alligilbreath/Desktop/project10/project_10_example/bld;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F2CA28B42D34F6CA37C3FEF /* Build configuration list for PBXProject "Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C9B498BCA5B4D9B92C088C5 /* Debug */,
+				167C7A53266B477C815CE3C8 /* Release */,
+				BA1DF99F7DD240B68AD33F50 /* MinSizeRel */,
+				1886EE9506A34B35BFECA343 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3CB91C22A0A94A9DB675E336 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568137EE70F142219186CFAF /* Debug */,
+				2973F19852014B1893786810 /* Release */,
+				5E6727AC065F4299801CE6DD /* MinSizeRel */,
+				BD0C0242A60A4774B55F11CE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F589921438D346FFA0810716 /* Build configuration list for PBXNativeTarget "velociplotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F3F392F9A064DD7AAD90B1A /* Debug */,
+				A2A8F6C40A034B398C988388 /* Release */,
+				C63F8593596142ECAE533DF0 /* MinSizeRel */,
+				5BB4DE0075EC4F71B6424DE5 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FD330B500E7B499F90849774 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15D1C9CE966C4E0CBB69D260 /* Debug */,
+				C7E1146C58B54B3AA5E83390 /* Release */,
+				80468277A78347B7A72EA21E /* MinSizeRel */,
+				F7A7C68C81974E68B2AC51CD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FB74831B1BB4DD8A44D29E3 /* Project object */;
+}
