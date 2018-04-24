@@ -8,6 +8,9 @@
 #include "testEndToEnd.h"
 #include "Velociplotter.h"
 #include <algorithm>
+#include <sstream>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -55,9 +58,9 @@ int EndToEndTester::TestFile(int testNum){
         getline(correctOutputFile, correctLineBuffer);
         correctLineBuffer.erase( std::remove(correctLineBuffer.begin(), correctLineBuffer.end(), '\r'), correctLineBuffer.end() );
         if(myLineBuffer.compare(correctLineBuffer) != 0){
-            cout << "Line Number " << lineNumber << endl
-            << "Correct Line: " << correctLineBuffer << endl
-            << "Your line: " << myLineBuffer << endl;
+            cout << "Line Number " << lineNumber << endl;
+            cout << "Correct Line: " << correctLineBuffer << endl;
+            cout << "Your line: " << myLineBuffer << endl;
             myOutputFile.close();
             correctOutputFile.close();
             return 0;
