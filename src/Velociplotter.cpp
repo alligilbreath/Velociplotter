@@ -46,10 +46,10 @@ void Velociplotter::ReadInputsFromFile()
     {
         stringstream inputSStream(line);
         inputSStream >> identifier >> time >> latitude >> longitude;
-        cout << "Identifier is: " << identifier;
-        cout << "Time is: " << time;
-        cout << "Latitude is: " << latitude;
-        cout << "Longitude is: " << longitude;
+        cout << "Identifier is: " << identifier << endl;
+        cout << "Time is: " << time << endl;
+        cout << "Latitude is: " << latitude << endl;
+        cout << "Longitude is: " << longitude << endl;
         if(identifier.compare("$GPGGA") == 0)
         {
             
