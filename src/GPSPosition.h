@@ -7,12 +7,14 @@
 
 #ifndef GPSPOSITION_H
 #define GPSPOSITION_H
+#include <vector>
 
 class GPSPosition {
 private:
     double _latitude;
     double _longitude;
     unsigned long _timeSeconds;
+    std::vector<GPSPosition*> _allPositions;
 public:
     GPSPosition(double latitude, double longitude, unsigned long timeSeconds);
     double GetLatitude() const { return _latitude; };
