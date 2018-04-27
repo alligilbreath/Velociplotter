@@ -45,9 +45,10 @@ void Velociplotter::ReadInputsFromFile()
     std::string directionLong;
     char comma;
     
-    while(getline(inputStream, line))
+    while(getline(inputStream, line, ','))
     {
         stringstream inputSStream(line);
+        cout << "Line is: " << line << endl;
         inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
         cout << "Identifier is: " << identifier << endl;
         cout << "Time is: " << time << endl;
