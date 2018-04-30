@@ -43,17 +43,53 @@ void Velociplotter::ReadInputsFromFile()
     float longitude;
     std::string directionLat;
     std::string directionLong;
-    char comma;
+    int i = 14;
+    bool isGPGGA = false;
     
     while(getline(inputStream, line, ','))
     {
         stringstream inputSStream(line);
         cout << "Line is: " << line << endl;
-        inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
-        cout << "Identifier is: " << identifier << endl;
-        cout << "Time is: " << time << endl;
-        cout << "Latitude is: " << latitude << endl;
-        cout << "Longitude is: " << longitude << endl;
+//        inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
+//        cout << "Identifier is: " << identifier << endl;
+//        cout << "Time is: " << time << endl;
+//        cout << "Latitude is: " << latitude << endl;
+//        cout << "Longitude is: " << longitude << endl;
+        if(i == 14)
+        {
+            inputSStream >> identifier;
+            cout << "Identifier is: " << identifier << endl;
+            if(identifier.compare("$GPGGA") == 0)
+            {
+                isGPGGA = true;
+                i--;
+            }
+        }
+        else if(i == 13 && isGPGGA)
+        {
+            inputSStream >> time;
+            cout << "Time is: " << time << endl;
+            i--;
+        }
+        else if(i == 12 && isGPGGA)
+        {
+            inputSStream >> latitude;
+            cout << "Latitude is: " << latitude << endl;
+            i--;
+        }
+        else if(i == 10 && isGPGGA)
+        {
+            inputSStream >> longitude;
+            cout << "Longitude is: " << longitude << endl;
+            i--;
+        }
+//        stringstream inputSStream(line);
+//        cout << "Line is: " << line << endl;
+//        inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
+//        cout << "Identifier is: " << identifier << endl;
+//        cout << "Time is: " << time << endl;
+//        cout << "Latitude is: " << latitude << endl;
+//        cout << "Longitude is: " << longitude << endl;
         if(identifier.compare("$GPGGA") == 0)
         {
             
