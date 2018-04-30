@@ -17,6 +17,11 @@ using namespace std;
 void EndToEndTester::RunTests(){
     for(int i = 0; i < 10; i++){
         cout << "Running file test " << i << endl;
+        cout << "*******" <<endl;
+        cout << "*******" << endl;
+        cout << "*******" << endl;
+        cout << "*******" << endl;
+        cout << "*******" << endl;
         TestFile(i);
     }
 }

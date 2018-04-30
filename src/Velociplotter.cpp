@@ -55,9 +55,9 @@ void Velociplotter::ReadInputsFromFile()
     while(getline(inputStream, line, ','))
     {
         stringstream inputSStream(line);
-        //cout << "Line is: " << line << endl;
+        //cout << "Line from " << _inputFilePath << " is: " << line << endl;
         newLineIndex = line.find('\n');
-        //cout << "New line index is: " << newLineIndex << "and isGPGGA is: " << isGPGGA << endl;
+        //cout << "New line index is: " << newLineIndex << " and isGPGGA is: " << isGPGGA << " and input file Path " << _inputFilePath << endl;
         if(newLineIndex == -1 && !isGPGGA)
         {
             i = 14;
@@ -65,7 +65,14 @@ void Velociplotter::ReadInputsFromFile()
         else if(newLineIndex != -1)
         {
             identifier = line.substr(newLineIndex + 1);
-            //cout << "In newLineIndex part and identifier is " << identifier << endl;
+           // cout << "In newLineIndex part and identifier is " << identifier << " " << _inputFilePath << endl;
+            if(identifier.find('\n') != -1) //for weird input3
+            {
+                //cout << "Identifier was: " << identifier << endl;
+                identifier = identifier.substr(identifier.find('\n') + 1);
+               // cout << "New identifier is: " << identifier << endl;
+            }
+            
             if(identifier.compare("$GPGGA") == 0)
             {
                 isGPGGA = true;
@@ -75,16 +82,18 @@ void Velociplotter::ReadInputsFromFile()
                 isGPGGA = false;
             }
             i = 14;
+            
+            
         }
-       // cout << "i is: " << i << " and isGPGGA value is: " << isGPGGA << endl;
+       // cout << "i is: " << i << " and isGPGGA value is: " << isGPGGA << " " << _inputFilePath << endl;
         if(i == 14 && !isGPGGA)
             {
                 inputSStream >> identifier;
-                //cout << "Identifier is: " << identifier << endl;
+               // cout << "Identifier is: " << identifier << " " << _inputFilePath << endl;
                 if(identifier.compare("$GPGGA") == 0)
                 {
                     isGPGGA = true;
-                    //cout << "Is GPGGA idenitifer: " << identifier << endl;
+                    //cout << "Is GPGGA idenitifer: " << identifier << " " << _inputFilePath << endl;
                 }
                 else
                 {
@@ -94,7 +103,7 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 13 && isGPGGA)
             {
                 inputSStream >> time;
-                //cout << "Time is: " << time << endl;
+               // cout << "Time is: " << time << " " << _inputFilePath << endl;
                 hours = time / 10000;
                 minutes = (time % 10000) / 100;
                 seconds = time % 100;
@@ -104,19 +113,19 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
-                //cout << "Latitude is: " << latitude << endl;
+               // cout << "Latitude is: " << latitude << " " << _inputFilePath << endl;
             }
         else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
-               // cout << "Longitude is: " << longitude << endl;
+                //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
                 GPSPosition currGPS(latitude, longitude, time);
                 _validPositions.push_back(currGPS);
                 if(_validPositions.size() > 1)
                 {
                     if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 2).GetTime())
                     {
-                        cout << "Found a time earlier than the previous" << endl;
+                      //  cout << "Found a time earlier than the previous" << " " << _inputFilePath << endl;
                         _validPositions.clear();
                         return;
                     }
