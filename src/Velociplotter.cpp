@@ -164,6 +164,7 @@ void Velociplotter::CalculateAverageVelocities(){
             currVelocity = distance / timeDiff;
             _velocities.push_back(currVelocity);
         }
+        index++;
     }
     
     for(unsigned int i = 0; i < _velocities.size(); i++)
