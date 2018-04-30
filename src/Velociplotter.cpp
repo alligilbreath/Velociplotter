@@ -53,7 +53,7 @@ void Velociplotter::ReadInputsFromFile()
         cout << "Line is: " << line << endl;
         newLineIndex = line.find('\n');
         cout << "New line index is: " << newLineIndex << endl;
-        if(newLineIndex == 0)
+        if(newLineIndex == -1)
         {
             i = 14;
         }
@@ -65,6 +65,7 @@ void Velociplotter::ReadInputsFromFile()
             {
                 isGPGGA = true;
             }
+            i = 14;
         }
         if(i == 14 && !isGPGGA)
             {
