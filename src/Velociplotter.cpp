@@ -52,12 +52,12 @@ void Velociplotter::ReadInputsFromFile()
         stringstream inputSStream(line);
         cout << "Line is: " << line << endl;
         newLineIndex = line.find('\n');
-        cout << "New line index is: " << newLineIndex << endl;
-        if(newLineIndex == -1)
+       // cout << "New line index is: " << newLineIndex << endl;
+        if(newLineIndex == -1 && !isGPGGA)
         {
             i = 14;
         }
-        else
+        else if(newLineIndex != -1)
         {
             identifier = line.substr(newLineIndex + 1);
             cout << "In newLineIndex part and identifier is " << identifier << endl;
@@ -65,8 +65,13 @@ void Velociplotter::ReadInputsFromFile()
             {
                 isGPGGA = true;
             }
+            else
+            {
+                isGPGGA = false;
+            }
             i = 14;
         }
+       // cout << "i is: " << i << " and isGPGGA value is: " << isGPGGA << endl;
         if(i == 14 && !isGPGGA)
             {
                 inputSStream >> identifier;
@@ -74,6 +79,11 @@ void Velociplotter::ReadInputsFromFile()
                 if(identifier.compare("$GPGGA") == 0)
                 {
                     isGPGGA = true;
+                    cout << "Is GPGGA idenitifer: " << identifier << endl;
+                }
+                else
+                {
+                    isGPGGA = false;
                 }
             }
         else if(i == 13 && isGPGGA)
@@ -91,7 +101,7 @@ void Velociplotter::ReadInputsFromFile()
                 inputSStream >> longitude;
                 cout << "Longitude is: " << longitude << endl;
             }
-            
+        
         i--;
      }
     
