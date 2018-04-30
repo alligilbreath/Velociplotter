@@ -104,18 +104,12 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 13 && isGPGGA)
             {
                 inputSStream >> time;
-                cout << "Time is: " << time << " " << _inputFilePath << endl;
-                if(inputSStream.good())
+                hours = time / 10000;
+                minutes = (time % 10000) / 100;
+                seconds = time % 100;
+                time = (hours * 3600) + (minutes * 60) + seconds;
+                if(time == 0)
                 {
-                    cout << "Time stream was good" << endl;
-                    hours = time / 10000;
-                    minutes = (time % 10000) / 100;
-                    seconds = time % 100;
-                    time = (hours * 3600) + (minutes * 60) + seconds;
-                }
-                else
-                {
-                    cout << "Time stream was bad" << endl;
                     isGPGGA = false;
                 }
                 
@@ -124,39 +118,23 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
-                if(!inputSStream.good())
-                {
-                    cout << "Latitude stream was bad" << endl;
-                    isGPGGA = false;
-                }
-                cout << "Latitude stream was good" << endl;
                // cout << "Latitude is: " << latitude << " " << _inputFilePath << endl;
             }
         else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
-                if(inputSStream.good())
-                {
-                    cout << "Longitude stream was good" << endl;
                     //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
-                    GPSPosition currGPS(latitude, longitude, time);
-                    _validPositions.push_back(currGPS);
-                    if(_validPositions.size() > 1)
+                GPSPosition currGPS(latitude, longitude, time);
+                _validPositions.push_back(currGPS);
+                if(_validPositions.size() > 1)
+                {
+                    if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 2).GetTime())
                     {
-                        if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 2).GetTime())
-                        {
-                            //  cout << "Found a time earlier than the previous" << " " << _inputFilePath << endl;
-                            _validPositions.clear();
-                            return;
-                        }
+                        //  cout << "Found a time earlier than the previous" << " " << _inputFilePath << endl;
+                        _validPositions.clear();
+                        return;
                     }
                 }
-                else
-                {
-                    cout << "Longitude stream was bad" << endl;
-                    isGPGGA = false;
-                }
-               
             }
         
         i--;
