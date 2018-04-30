@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -39,9 +40,12 @@ void Velociplotter::ReadInputsFromFile()
     cout << "Input file path is: " << _inputFilePath << endl;
     std::string line;
     std::string identifier;
-    float time;
-    float latitude;
-    float longitude;
+    unsigned long time;
+    double latitude;
+    double longitude;
+    int hours = 0;
+    int minutes = 0;
+    int seconds = 0;
     std::string directionLat;
     std::string directionLong;
     int i = 14;
@@ -51,7 +55,7 @@ void Velociplotter::ReadInputsFromFile()
     while(getline(inputStream, line, ','))
     {
         stringstream inputSStream(line);
-        cout << "Line is: " << line << endl;
+        //cout << "Line is: " << line << endl;
         newLineIndex = line.find('\n');
         //cout << "New line index is: " << newLineIndex << "and isGPGGA is: " << isGPGGA << endl;
         if(newLineIndex == -1 && !isGPGGA)
@@ -61,7 +65,7 @@ void Velociplotter::ReadInputsFromFile()
         else if(newLineIndex != -1)
         {
             identifier = line.substr(newLineIndex + 1);
-            cout << "In newLineIndex part and identifier is " << identifier << endl;
+            //cout << "In newLineIndex part and identifier is " << identifier << endl;
             if(identifier.compare("$GPGGA") == 0)
             {
                 isGPGGA = true;
@@ -76,11 +80,11 @@ void Velociplotter::ReadInputsFromFile()
         if(i == 14 && !isGPGGA)
             {
                 inputSStream >> identifier;
-                cout << "Identifier is: " << identifier << endl;
+                //cout << "Identifier is: " << identifier << endl;
                 if(identifier.compare("$GPGGA") == 0)
                 {
                     isGPGGA = true;
-                    cout << "Is GPGGA idenitifer: " << identifier << endl;
+                    //cout << "Is GPGGA idenitifer: " << identifier << endl;
                 }
                 else
                 {
@@ -90,68 +94,46 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 13 && isGPGGA)
             {
                 inputSStream >> time;
-                cout << "Time is: " << time << endl;
+                //cout << "Time is: " << time << endl;
+                hours = time / 10000;
+                minutes = (time % 10000) / 100;
+                seconds = time % 100;
+                time = (hours * 3600) + (minutes * 60) + seconds;
+                
             }
         else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
-                cout << "Latitude is: " << latitude << endl;
+                //cout << "Latitude is: " << latitude << endl;
             }
         else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
-                cout << "Longitude is: " << longitude << endl;
+               // cout << "Longitude is: " << longitude << endl;
+                GPSPosition currGPS(latitude, longitude, time);
+                _validPositions.push_back(currGPS);
+                if(_validPositions.size() > 1)
+                {
+                    if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 1).GetTime())
+                    {
+                        cout << "Found a time earlier than the previous" << endl;
+                        _validPositions.clear();
+                        return;
+                    }
+                }
             }
         
         i--;
      }
+    cout << "Input file is: " << _inputFilePath << endl;
+    for(unsigned int i = 0; i < _validPositions.size(); i++)
+    {
+        cout << "Latitude: " << _validPositions.at(i).GetLatitude() << endl;
+        cout << "Longitude: " << _validPositions.at(i).GetLongitude() << endl;
+        cout << "Time: " << _validPositions.at(i).GetTime() << endl;
+    }
     
     }
-//        inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
-//        cout << "Identifier is: " << identifier << endl;
-//        cout << "Time is: " << time << endl;
-//        cout << "Latitude is: " << latitude << endl;
-//        cout << "Longitude is: " << longitude << endl;
-//        cout << "i is: " << i << endl;
-//        if(i == 14)
-//        {
-//            inputSStream >> identifier;
-//            cout << "Identifier is: " << identifier << endl;
-//            if(identifier.compare("$GPGGA") == 0)
-//            {
-//                isGPGGA = true;
-//                i--;
-//            }
-//        }
-//        else if(i == 13 && isGPGGA)
-//        {
-//            inputSStream >> time;
-//            cout << "Time is: " << time << endl;
-//            i--;
-//        }
-//        else if(i == 12 && isGPGGA)
-//        {
-//            inputSStream >> latitude;
-//            cout << "Latitude is: " << latitude << endl;
-//            i--;
-//        }
-//        else if(i == 10 && isGPGGA)
-//        {
-//            inputSStream >> longitude;
-//            cout << "Longitude is: " << longitude << endl;
-//            i--;
-//        }
-////        stringstream inputSStream(line);
-////        cout << "Line is: " << line << endl;
-////        inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
-////        cout << "Identifier is: " << identifier << endl;
-////        cout << "Time is: " << time << endl;
-////        cout << "Latitude is: " << latitude << endl;
-////        cout << "Longitude is: " << longitude << endl;
-//        if(identifier.compare("$GPGGA") == 0)
-//        {
-//
-//        }
         
 
 
@@ -159,6 +141,15 @@ void Velociplotter::CalculateAverageVelocities(){
     //average_velocity = (x_1 - x_0)/(t_1 - t_0)
     //This is straight forward when there is a GPS sentence available at time t_0.
     //If there is not, then output the SAME average velocity until the next time where a GPS sentence appears.
+    double currVelocity = 0;
+    double distance = 0;
+    unsigned long timeDiff = 0;
+    int index = 0;
+    unsigned long totalAmountOfTime = _validPositions.back().GetTime() - _validPositions.front().GetTime();
+    for(unsigned int i = 0; i < totalAmountOfTime && index < _validPositions.size() - 1; i++)
+    {
+        timeDiff = _validPositions.at(index + 1).GetTime() - _validPositions.at(index).GetTime();
+    }
     
 }
 

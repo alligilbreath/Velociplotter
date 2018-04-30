@@ -10,6 +10,21 @@
 
 using namespace std;
 
+GPSPosition::GPSPosition()
+{
+    _latitude = 0;
+    _longitude = 0;
+    _timeSeconds = 0;
+    
+}
+
+GPSPosition::GPSPosition(double latitude, double longitude, unsigned long timeSeconds)
+{
+    _latitude = latitude;
+    _longitude = longitude;
+    _timeSeconds = timeSeconds;
+}
+
 double GPSPosition::CalcDistanceKmTo(GPSPosition toPosition){
     const double EarthRadiusKm = 6371.0;
     const double PI = 3.14159265358979323846;
