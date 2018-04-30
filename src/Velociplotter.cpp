@@ -52,16 +52,21 @@ void Velociplotter::ReadInputsFromFile()
         stringstream inputSStream(line);
         cout << "Line is: " << line << endl;
         newLineIndex = line.find('\n');
-        if(newLineIndex = 0)
+        if(newLineIndex == 0)
         {
             i = 14;
         }
         else
         {
             identifier = line.substr(newLineIndex + 1);
+            cout << "In newLineIndex part and identifier is " << identifier << endl;
+            if(identifier.compare("$GPGGA") == 0)
+            {
+                isGPGGA = true;
+            }
             i = 13;
         }
-            if(i == 14)
+        if(i == 14)
             {
                 inputSStream >> identifier;
                 cout << "Identifier is: " << identifier << endl;
@@ -70,24 +75,24 @@ void Velociplotter::ReadInputsFromFile()
                     isGPGGA = true;
                 }
             }
-            else if(i == 13 && isGPGGA)
+        else if(i == 13 && isGPGGA)
             {
                 inputSStream >> time;
                 cout << "Time is: " << time << endl;
             }
-            else if(i == 12 && isGPGGA)
+        else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
                 cout << "Latitude is: " << latitude << endl;
             }
-            else if(i == 10 && isGPGGA)
+        else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
                 cout << "Longitude is: " << longitude << endl;
             }
             
-            i--;
-        }
+        i--;
+     }
     
     }
 //        inputSStream >> identifier >> comma >> time >> comma >> latitude >> comma >> directionLat >> comma >> longitude >> comma >> directionLong;
@@ -136,12 +141,7 @@ void Velociplotter::ReadInputsFromFile()
 //
 //        }
         
-        
-    }
 
-
-    
-}
 
 void Velociplotter::CalculateAverageVelocities(){
     //average_velocity = (x_1 - x_0)/(t_1 - t_0)
