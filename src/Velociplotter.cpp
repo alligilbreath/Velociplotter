@@ -144,7 +144,7 @@ void Velociplotter::CalculateAverageVelocities(){
     double currVelocity = 0;
     double distance = 0;
     unsigned long timeDiff = 0;
-    int index = 0;
+    unsigned int index = 0;
     unsigned long totalAmountOfTime = _validPositions.back().GetTime() - _validPositions.front().GetTime();
     for(unsigned long i = 1; (i < totalAmountOfTime) && (index < _validPositions.size() - 1); i++)
     {
