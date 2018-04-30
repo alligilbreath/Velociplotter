@@ -138,18 +138,18 @@ void Velociplotter::ReadInputsFromFile()
 
 
 void Velociplotter::CalculateAverageVelocities(){
-    //average_velocity = (x_1 - x_0)/(t_1 - t_0)
-    //This is straight forward when there is a GPS sentence available at time t_0.
-    //If there is not, then output the SAME average velocity until the next time where a GPS sentence appears.
-    double currVelocity = 0;
-    double distance = 0;
-    unsigned long timeDiff = 0;
-    int index = 0;
-    unsigned long totalAmountOfTime = _validPositions.back().GetTime() - _validPositions.front().GetTime();
-    for(unsigned int i = 0; i < totalAmountOfTime && index < _validPositions.size() - 1; i++)
-    {
-        timeDiff = _validPositions.at(index + 1).GetTime() - _validPositions.at(index).GetTime();
-    }
+//    //average_velocity = (x_1 - x_0)/(t_1 - t_0)
+//    //This is straight forward when there is a GPS sentence available at time t_0.
+//    //If there is not, then output the SAME average velocity until the next time where a GPS sentence appears.
+//    double currVelocity = 0;
+//    double distance = 0;
+//    unsigned long timeDiff = 0;
+//    int index = 0;
+//    unsigned long totalAmountOfTime = _validPositions.back().GetTime() - _validPositions.front().GetTime();
+//    for(unsigned int i = 0; i < totalAmountOfTime && index < _validPositions.size() - 1; i++)
+//    {
+//        timeDiff = _validPositions.at(index + 1).GetTime() - _validPositions.at(index).GetTime();
+//    }
     
 }
 
