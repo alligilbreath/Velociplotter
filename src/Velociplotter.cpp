@@ -141,6 +141,11 @@ void Velociplotter::CalculateAverageVelocities(){
     //average_velocity = (x_1 - x_0)/(t_1 - t_0)
     //This is straight forward when there is a GPS sentence available at time t_0.
     //If there is not, then output the SAME average velocity until the next time where a GPS sentence appears.
+    if(_validPositions.size() == 0)
+    {
+        cout << "No valid positions" << endl;
+        return;
+    }
     double currVelocity = 0;
     double distance = 0;
     unsigned long timeDiff = 0;
@@ -149,12 +154,13 @@ void Velociplotter::CalculateAverageVelocities(){
     for(unsigned long i = 1; (i < totalAmountOfTime) && (index < _validPositions.size() - 1); i++)
     {
         timeDiff = _validPositions.at(index + 1).GetTime() - _validPositions.at(index).GetTime();
-        if(timeDiff != 1 && _velocities.size() != 0)
+        if(timeDiff != 1) //&& _velocities.size() != 0)
         {
+            currVelocity = distance / timeDiff;
             unsigned long count = timeDiff;
             while(count > 0)
             {
-                _velocities.push_back(_velocities.at(_velocities.size() - 1));
+                _velocities.push_back(currVelocity);//_velocities.at(_velocities.size() - 1));
                 count--;
             }
         }
