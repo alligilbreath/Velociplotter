@@ -146,7 +146,7 @@ void Velociplotter::CalculateAverageVelocities(){
     unsigned long timeDiff = 0;
     int index = 0;
     unsigned long totalAmountOfTime = _validPositions.back().GetTime() - _validPositions.front().GetTime();
-    for(unsigned int i = 1; (i < totalAmountOfTime) && (index < _validPositions.size() - 1); i++)
+    for(unsigned long i = 1; (i < totalAmountOfTime) && (index < _validPositions.size() - 1); i++)
     {
         timeDiff = _validPositions.at(index + 1).GetTime() - _validPositions.at(index).GetTime();
         if(timeDiff != 1 && _velocities.size() != 0)
@@ -162,6 +162,7 @@ void Velociplotter::CalculateAverageVelocities(){
         {
             distance = _validPositions.at(index).CalcDistanceKmTo(_validPositions.at(index + 1));
             currVelocity = distance / timeDiff;
+            _velocities.push_back(currVelocity);
         }
     }
     
