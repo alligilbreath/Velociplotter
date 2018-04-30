@@ -107,6 +107,7 @@ void Velociplotter::ReadInputsFromFile()
                 cout << "Time is: " << time << " " << _inputFilePath << endl;
                 if(inputSStream.good())
                 {
+                    cout << "Time stream was good" << endl;
                     hours = time / 10000;
                     minutes = (time % 10000) / 100;
                     seconds = time % 100;
@@ -114,6 +115,7 @@ void Velociplotter::ReadInputsFromFile()
                 }
                 else
                 {
+                    cout << "Time stream was bad" << endl;
                     isGPGGA = false;
                 }
                 
@@ -124,8 +126,10 @@ void Velociplotter::ReadInputsFromFile()
                 inputSStream >> latitude;
                 if(!inputSStream.good())
                 {
+                    cout << "Latitude stream was bad" << endl;
                     isGPGGA = false;
                 }
+                cout << "Latitude stream was good" << endl;
                // cout << "Latitude is: " << latitude << " " << _inputFilePath << endl;
             }
         else if(i == 10 && isGPGGA)
@@ -133,6 +137,7 @@ void Velociplotter::ReadInputsFromFile()
                 inputSStream >> longitude;
                 if(inputSStream.good())
                 {
+                    cout << "Longitude stream was good" << endl;
                     //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
                     GPSPosition currGPS(latitude, longitude, time);
                     _validPositions.push_back(currGPS);
@@ -148,6 +153,7 @@ void Velociplotter::ReadInputsFromFile()
                 }
                 else
                 {
+                    cout << "Longitude stream was bad" << endl;
                     isGPGGA = false;
                 }
                
