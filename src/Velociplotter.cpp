@@ -36,6 +36,7 @@ void Velociplotter::ReadInputsFromFile()
     {
         cout << "Could not open: " << _inputFilePath << endl;
     }
+    cout << "Input file path is: " << _inputFilePath << endl;
     std::string line;
     std::string identifier;
     float time;
@@ -52,7 +53,7 @@ void Velociplotter::ReadInputsFromFile()
         stringstream inputSStream(line);
         cout << "Line is: " << line << endl;
         newLineIndex = line.find('\n');
-       // cout << "New line index is: " << newLineIndex << endl;
+        cout << "New line index is: " << newLineIndex << "and isGPGGA is: " << isGPGGA << endl;
         if(newLineIndex == -1 && !isGPGGA)
         {
             i = 14;
