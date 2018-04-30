@@ -55,6 +55,7 @@ void Velociplotter::ReadInputsFromFile()
 //        cout << "Time is: " << time << endl;
 //        cout << "Latitude is: " << latitude << endl;
 //        cout << "Longitude is: " << longitude << endl;
+        cout << "i is: " << i << endl;
         if(i == 14)
         {
             inputSStream >> identifier;
