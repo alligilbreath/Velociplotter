@@ -114,7 +114,7 @@ void Velociplotter::ReadInputsFromFile()
                 _validPositions.push_back(currGPS);
                 if(_validPositions.size() > 1)
                 {
-                    if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 1).GetTime())
+                    if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 2).GetTime())
                     {
                         cout << "Found a time earlier than the previous" << endl;
                         _validPositions.clear();
