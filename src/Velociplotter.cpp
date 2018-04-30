@@ -104,33 +104,53 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 13 && isGPGGA)
             {
                 inputSStream >> time;
-               // cout << "Time is: " << time << " " << _inputFilePath << endl;
-                hours = time / 10000;
-                minutes = (time % 10000) / 100;
-                seconds = time % 100;
-                time = (hours * 3600) + (minutes * 60) + seconds;
+                cout << "Time is: " << time << " " << _inputFilePath << endl;
+                if(inputSStream.good())
+                {
+                    hours = time / 10000;
+                    minutes = (time % 10000) / 100;
+                    seconds = time % 100;
+                    time = (hours * 3600) + (minutes * 60) + seconds;
+                }
+                else
+                {
+                    isGPGGA = false;
+                }
+                
                 
             }
         else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
+                if(!inputSStream.good())
+                {
+                    isGPGGA = false;
+                }
                // cout << "Latitude is: " << latitude << " " << _inputFilePath << endl;
             }
         else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
-                //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
-                GPSPosition currGPS(latitude, longitude, time);
-                _validPositions.push_back(currGPS);
-                if(_validPositions.size() > 1)
+                if(inputSStream.good())
                 {
-                    if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 2).GetTime())
+                    //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
+                    GPSPosition currGPS(latitude, longitude, time);
+                    _validPositions.push_back(currGPS);
+                    if(_validPositions.size() > 1)
                     {
-                      //  cout << "Found a time earlier than the previous" << " " << _inputFilePath << endl;
-                        _validPositions.clear();
-                        return;
+                        if(_validPositions.at(_validPositions.size() - 1).GetTime() < _validPositions.at(_validPositions.size() - 2).GetTime())
+                        {
+                            //  cout << "Found a time earlier than the previous" << " " << _inputFilePath << endl;
+                            _validPositions.clear();
+                            return;
+                        }
                     }
                 }
+                else
+                {
+                    isGPGGA = false;
+                }
+               
             }
         
         i--;
