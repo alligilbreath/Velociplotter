@@ -61,8 +61,8 @@ double GPSPosition::CalcDistanceKmTo(GPSPosition toPosition){
    // cout << "DeltaLongitude: " << deltaLongitude << endl;
     
     // Calculate great-circle distance using haversine formula
-    a = ( sin(deltaLatitude / 2) * sin(deltaLatitude / 2) ) +
-    ( sin(deltaLongitude / 2) * sin(deltaLongitude / 2) *
+    a = ( sin(deltaLatitude / 2.0) * sin(deltaLatitude / 2.0) ) +
+    ( sin(deltaLongitude / 2.0) * sin(deltaLongitude / 2.0) *
      cos(fromLatitudeRad) * cos(toLatitudeRad) );
     c = 2 * atan2(sqrt(a), sqrt(1-a));
     //cout << "RETURNING: " << (EarthRadiusKm * c) << endl;

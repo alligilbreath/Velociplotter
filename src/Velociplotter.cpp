@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -172,7 +173,7 @@ void Velociplotter::CalculateAverageVelocities(){
       //  cout << "Time diff is: " << timeDiff << endl;
         if(timeDiff != 1) //&& _velocities.size() != 0)
         {
-            currVelocity = (distance / timeDiff) * 60;
+            currVelocity = ((distance * 1.0) / (timeDiff * 1.0)) * 60;
             unsigned long count = timeDiff;
             while(count > 0)
             {
@@ -185,7 +186,7 @@ void Velociplotter::CalculateAverageVelocities(){
 //            cout << "I'm passing in Long: " << _validPositions.at(index - 1).GetLongitude() << " Lat: " << _validPositions.at(index -1).GetLatitude() << endl;
 //            cout << "To Long: " << _validPositions.at(index).GetLongitude() << " Lat: " << _validPositions.at(index).GetLatitude() << endl;
           //  cout << "Distance is " << distance << endl;
-            currVelocity = (distance / timeDiff) * 60;
+            currVelocity = ((distance * 1.0) / (timeDiff * 1.0)) * 60;
             _velocities.push_back(currVelocity);
         }
         index++;
