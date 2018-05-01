@@ -168,7 +168,7 @@ void Velociplotter::CalculateAverageVelocities(){
     for(unsigned long i = 1; (i < totalAmountOfTime) && (index < _validPositions.size()); i++)
     {
         timeDiff = _validPositions.at(index).GetTime() - _validPositions.at(index - 1).GetTime();
-        cout << "Time diff is: " << endl;
+        cout << "Time diff is: " << timeDiff << endl;
         if(timeDiff != 1) //&& _velocities.size() != 0)
         {
             currVelocity = distance / timeDiff;
