@@ -168,6 +168,7 @@ void Velociplotter::CalculateAverageVelocities(){
     for(unsigned long i = 1; (i < totalAmountOfTime) && (index < _validPositions.size()); i++)
     {
         timeDiff = _validPositions.at(index).GetTime() - _validPositions.at(index - 1).GetTime();
+        distance = _validPositions.at(index - 1).CalcDistanceKmTo(_validPositions.at(index));
       //  cout << "Time diff is: " << timeDiff << endl;
         if(timeDiff != 1) //&& _velocities.size() != 0)
         {
@@ -183,7 +184,6 @@ void Velociplotter::CalculateAverageVelocities(){
         {
 //            cout << "I'm passing in Long: " << _validPositions.at(index - 1).GetLongitude() << " Lat: " << _validPositions.at(index -1).GetLatitude() << endl;
 //            cout << "To Long: " << _validPositions.at(index).GetLongitude() << " Lat: " << _validPositions.at(index).GetLatitude() << endl;
-            distance = _validPositions.at(index - 1).CalcDistanceKmTo(_validPositions.at(index));
           //  cout << "Distance is " << distance << endl;
             currVelocity = (distance / timeDiff) * 60;
             _velocities.push_back(currVelocity);
