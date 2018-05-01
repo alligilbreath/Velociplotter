@@ -165,7 +165,7 @@ void Velociplotter::CalculateAverageVelocities(){
     unsigned long timeDiff = 0;
     unsigned int index = 1;
     unsigned long totalAmountOfTime = _validPositions.back().GetTime() - _validPositions.front().GetTime();
-    for(unsigned long i = 1; (i < totalAmountOfTime) && (index < _validPositions.size()); i++)
+    for(unsigned long i = 1; (i <= totalAmountOfTime) && (index < _validPositions.size()); i++)
     {
         timeDiff = _validPositions.at(index).GetTime() - _validPositions.at(index - 1).GetTime();
         distance = _validPositions.at(index - 1).CalcDistanceKmTo(_validPositions.at(index));
