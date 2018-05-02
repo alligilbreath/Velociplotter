@@ -43,9 +43,13 @@ void Velociplotter::ReadInputsFromFile()
     std::string identifier;
     unsigned long time;
     double latitude;
+    int latitudeDeg;
+    double latMintoDeg;
     double longitude;
-    int hours = 0;
-    int minutes = 0;
+    int longitudeDeg;
+    double longitudeMintoDeg;
+    double hours = 0;
+    double minutes = 0;
     int seconds = 0;
     std::string directionLat;
     std::string directionLong;
@@ -119,11 +123,27 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
+                cout << "Latitude is: " << latitude << endl;
+                latitudeDeg = latitude / 100;
+              //  cout << "Latitude degree is: " << latitudeDeg << endl;
+                latMintoDeg = (latitude - (latitudeDeg * 100)) / 60.0;
+              //  cout << "LatMintoDeg is: " << latMintoDeg << endl;
+                latitude = latitudeDeg + latMintoDeg;
+                cout << "New latitude is: " << latitude << endl;
+                //degree minutes seconds
+                //45.21 (.21 * 60)
                // cout << "Latitude is: " << latitude << " " << _inputFilePath << endl;
             }
         else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
+                cout << "Longitude is: " << longitude << endl;
+                longitudeDeg = longitude / 100;
+                //cout << "Longitude degree is: " << longitudeDeg << endl;
+                longitudeMintoDeg = (longitude - (longitudeDeg * 100)) / 60.0;
+                //cout << "LongMintoDeg is: " << longitudeMintoDeg << endl;
+                longitude = longitudeDeg + longitudeMintoDeg;
+                cout << "New longitude is: " << longitude << endl;
                     //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
                 GPSPosition currGPS(latitude, longitude, time);
                 _validPositions.push_back(currGPS);
@@ -173,7 +193,7 @@ void Velociplotter::CalculateAverageVelocities(){
       //  cout << "Time diff is: " << timeDiff << endl;
         if(timeDiff != 1) //&& _velocities.size() != 0)
         {
-            currVelocity = ((distance * 1.0) / (timeDiff * 1.0)) * 60;
+            currVelocity = ((distance * 1.0) / (timeDiff * 1.0)) * 3600;
             unsigned long count = timeDiff;
             while(count > 0)
             {
@@ -186,16 +206,16 @@ void Velociplotter::CalculateAverageVelocities(){
 //            cout << "I'm passing in Long: " << _validPositions.at(index - 1).GetLongitude() << " Lat: " << _validPositions.at(index -1).GetLatitude() << endl;
 //            cout << "To Long: " << _validPositions.at(index).GetLongitude() << " Lat: " << _validPositions.at(index).GetLatitude() << endl;
           //  cout << "Distance is " << distance << endl;
-            currVelocity = ((distance * 1.0) / (timeDiff * 1.0)) * 60;
+            currVelocity = ((distance * 1.0) / (timeDiff * 1.0)) * 3600;
             _velocities.push_back(currVelocity);
         }
         index++;
     }
     
-    for(unsigned int i = 0; i < _velocities.size(); i++)
-    {
-        cout << "Velocity is: " << _velocities.at(i) << endl;
-    }
+//    for(unsigned int i = 0; i < _velocities.size(); i++)
+//    {
+//        cout << "Velocity is: " << _velocities.at(i) << endl;
+//    }
     
 }
 
@@ -225,7 +245,7 @@ void Velociplotter::WriteOutputsToFile(){
         }
         else
         {
-            cout << _validPositions.back().GetTime() << endl;
+            //cout << _validPositions.back().GetTime() << endl;
             unsigned long firstTimeVal = _validPositions.front().GetTime() + 1;
             for(unsigned int i = 0; i < _velocities.size(); i++)
             {
