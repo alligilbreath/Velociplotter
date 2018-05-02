@@ -155,6 +155,11 @@ void Velociplotter::ReadInputsFromFile()
                         _validPositions.clear();
                         return;
                     }
+                    else if(_validPositions.at(_validPositions.size() - 1).GetTime() == _validPositions.at(_validPositions.size() -2).GetTime())
+                    {
+                        cout << "Removed the previous position that was at the same time" << endl;
+                        _validPositions.erase(_validPositions.begin() + _validPositions.size() - 2);
+                    }
                 }
             }
         
