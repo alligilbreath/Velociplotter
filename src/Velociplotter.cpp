@@ -57,7 +57,7 @@ void Velociplotter::ReadInputsFromFile()
     bool isGPGGA = false;
     int newLineIndex = 0;
     int secondNewLineIndex = 0;
-    while(getline(inputStream, line, ','))
+    while(getline(inputStream, line, ',') || !inputStream.eof())
     {
         stringstream inputSStream(line);
         //cout << "Line from " << _inputFilePath << " is: " << line << endl;
@@ -123,13 +123,13 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 12 && isGPGGA)
             {
                 inputSStream >> latitude;
-                cout << "Latitude is: " << latitude << endl;
+              //  cout << "Latitude is: " << latitude << endl;
                 latitudeDeg = latitude / 100;
               //  cout << "Latitude degree is: " << latitudeDeg << endl;
                 latMintoDeg = (latitude - (latitudeDeg * 100)) / 60.0;
               //  cout << "LatMintoDeg is: " << latMintoDeg << endl;
                 latitude = latitudeDeg + latMintoDeg;
-                cout << "New latitude is: " << latitude << endl;
+               // cout << "New latitude is: " << latitude << endl;
                 //degree minutes seconds
                 //45.21 (.21 * 60)
                // cout << "Latitude is: " << latitude << " " << _inputFilePath << endl;
@@ -137,13 +137,13 @@ void Velociplotter::ReadInputsFromFile()
         else if(i == 10 && isGPGGA)
             {
                 inputSStream >> longitude;
-                cout << "Longitude is: " << longitude << endl;
+               // cout << "Longitude is: " << longitude << endl;
                 longitudeDeg = longitude / 100;
                 //cout << "Longitude degree is: " << longitudeDeg << endl;
                 longitudeMintoDeg = (longitude - (longitudeDeg * 100)) / 60.0;
                 //cout << "LongMintoDeg is: " << longitudeMintoDeg << endl;
                 longitude = longitudeDeg + longitudeMintoDeg;
-                cout << "New longitude is: " << longitude << endl;
+               // cout << "New longitude is: " << longitude << endl;
                     //cout << "Longitude is: " << longitude << " " << _inputFilePath << endl;
                 GPSPosition currGPS(latitude, longitude, time);
                 _validPositions.push_back(currGPS);
